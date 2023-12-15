@@ -16,5 +16,20 @@ namespace MJPMGit.Widoki
         {
             InitializeComponent();
         }
+
+        private void gracz_nav_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new StonaGracz());
+        }
+
+        private void admin_Nnav_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new StronaAdmin());
+        }
+
+        private void wyniki_nav_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new StronaWynik());
+        }
     }
 }

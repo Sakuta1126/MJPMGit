@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MJPMGit.Widoki.Klasy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace MJPMGit.Widoki
         public StonaGracz()
         {
             InitializeComponent();
+        }
+
+        private void aplikuj_Clicked(object sender, EventArgs e)
+        {
+            Gracz nowygracz = new Gracz(imie.Text,nazwisko.Text,email.TextTransform);
         }
     }
 }
