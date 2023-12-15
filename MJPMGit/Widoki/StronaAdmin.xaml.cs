@@ -47,8 +47,7 @@ namespace MJPMGit.Widoki
                     licznikWygranych++;
                 }
             }
-            DateTime data =  DateTime.Now;
-            Wynik dodawanyWynik = new Wynik(data,wynik, licznikWygranych);
+            Wynik dodawanyWynik = new Wynik(DateTime.Now, wynik, licznikWygranych);
             App.Baza.Zapisz(dodawanyWynik);
             dataLosowania.Text = "Data losowania: "+ dodawanyWynik.DataLosowania.ToString();
             iloscWygranych.Text = "Ilosc wygranych: "+licznikWygranych.ToString();
@@ -66,8 +65,8 @@ namespace MJPMGit.Widoki
                 WyslijMail(gracz.Email, "Gratuluje wygranej!", "Proszę o kontakt pod adresem Limanowa 22. \nPozdrawiamy zespół lotto.");
                 licznikWygranych++;
             }
-            DateTime data = DateTime.Now;
-            Wynik dodawanyWynik = new Wynik(data, wynik, licznikWygranych);
+            
+            Wynik dodawanyWynik = new Wynik(DateTime.Now, wynik, licznikWygranych);
             App.Baza.Zapisz(dodawanyWynik);
             dataLosowania.Text = "Data losowania: " + dodawanyWynik.DataLosowania.ToString();
             iloscWygranych.Text = "Ilosc wygranych: " + licznikWygranych.ToString();

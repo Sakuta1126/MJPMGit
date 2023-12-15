@@ -21,9 +21,11 @@ namespace MJPMGit.Widoki
 
         private void wyszukaj_TextChanged(object sender, TextChangedEventArgs e)
         {
+           
             List<Wynik> listaWynikow = App.Baza.Wypisz<Wynik>();
             List<Wynik> nowaLista = listaWynikow.Where(wygrana => wygrana.Id.ToString().Contains(wyszukaj.Text)).ToList();
             listaWygranych.ItemsSource = nowaLista;
+            
         }
     }
 }
