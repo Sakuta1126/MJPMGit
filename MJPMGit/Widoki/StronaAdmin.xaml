@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MJPMGit.Widoki.StronaAdmin">
+             x:Class="MJPMGit.Widoki.StronaAdmin" NavigationPage.HasBackButton="True" Title="Admin"> 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Wylosuj wygranego" x:Name="losowanie" Clicked="losowanie_Clicked"></Button>
+            <Button Text="Kazdy wygrywa" x:Name="kazdyWygrywa" Clicked="kazdyWygrywa_Clicked"></Button>
+            <Label FontSize="12" Text="" x:Name="dataLosowania"></Label>
+            <Label FontSize="12"  Text="" x:Name="iloscWygranych"></Label>
+            <Label FontSize="12"  Text="" x:Name="wygranyKod"></Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
