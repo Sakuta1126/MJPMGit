@@ -17,7 +17,7 @@ namespace MJPMGit
             {
                 if (baza == null)
                 {
-                    baza = new BazaDanych(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "bazaSprawdzian.db3"));
+                    baza = new BazaDanych(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "bazaSprawdziannn.db3"));
                 }
                 return baza;
             }

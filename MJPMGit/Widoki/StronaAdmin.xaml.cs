@@ -19,12 +19,12 @@ namespace MJPMGit.Widoki
             InitializeComponent();
         }
 
-        void WyslijMail(string odKogo, string haslo,string doKogo, string tytul, string opis)
+        void WyslijMail(string doKogo, string tytul, string opis)
         {
-            MailMessage wiadomosc = new MailMessage(odKogo,doKogo,tytul,opis); 
+            MailMessage wiadomosc = new MailMessage("sprawdziangit@outlook.com",doKogo,tytul,opis); 
             SmtpClient klient = new SmtpClient("smtp-mail.outlook.com",587);
             klient.EnableSsl = true;
-            klient.Credentials = new NetworkCredential(odKogo, haslo);
+            klient.Credentials = new NetworkCredential("sprawdziangit@outlook.com", "Haslo123");
             klient.UseDefaultCredentials = false;
             klient.Send(wiadomosc);
         }
@@ -43,7 +43,7 @@ namespace MJPMGit.Widoki
             {
                 if(gracz.Kod == wynik)
                 {
-                    WyslijMail("sprawdziangit@outlook.com", "Haslo123", "Gratuluje wygranej!", gracz.Email ,"Proszę o kontakt pod adresem Limanowa 22. \nPozdrawiamy zespół lotto.");
+                    WyslijMail(gracz.Email, "Gratuluje wygranej!", "Proszę o kontakt pod adresem Limanowa 22. \nPozdrawiamy zespół lotto.");
                     licznikWygranych++;
                 }
             }
@@ -63,11 +63,8 @@ namespace MJPMGit.Widoki
             List<Gracz> listaGraczy = App.Baza.Wypisz<Gracz>();
             foreach (Gracz gracz in listaGraczy)
             {
-                if (gracz.Kod == wynik)
-                {
-                    WyslijMail("sprawdziangit@outlook.com", "Haslo123", "Gratuluje wygranej!", gracz.Email, "Proszę o kontakt pod adresem Limanowa 22. \nPozdrawiamy zespół lotto.");
-                    licznikWygranych++;
-                }
+                WyslijMail(gracz.Email, "Gratuluje wygranej!", "Proszę o kontakt pod adresem Limanowa 22. \nPozdrawiamy zespół lotto.");
+                licznikWygranych++;
             }
             DateTime data = DateTime.Now;
             Wynik dodawanyWynik = new Wynik(data, wynik, licznikWygranych);

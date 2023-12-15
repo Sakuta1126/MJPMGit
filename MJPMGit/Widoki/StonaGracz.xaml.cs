@@ -21,17 +21,19 @@ namespace MJPMGit.Widoki
 
         private void aplikuj_Clicked(object sender, EventArgs e)
         {
-            Gracz nowygracz = new Gracz(imie.Text,nazwisko.Text,email.Text,kod.Text);
-            if(imie.Text!="" && nazwisko.Text!=""&&email.Text!=""&&kod.Text!="")
+            Gracz nowygracz = new Gracz(imie.Text, nazwisko.Text, email.Text, kod.Text);
+            if (imie.Text != "" && nazwisko.Text != "" && email.Text != "" && kod.Text != "" &&
+                Regex.IsMatch(email.Text, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$") && Regex.IsMatch(kod.Text, @"^[0-9]{9}$"))
             {
                 App.Baza.Zapisz(nowygracz);
-                DisplayAlert("informacja", "zapisales sie do loterii", "OK");
+                DisplayAlert("informacja", "Wziales udzial w loterii", "OK");
                 Navigation.PopAsync();
             }
             else
             {
-                DisplayAlert("blad", "Pola uzupelnione nieprawidlowo", "OK");
+                DisplayAlert("Blad", "Pola uzupelnione niepoprawnie", "OK");
             }
+
             imie.Text = "";
             nazwisko.Text = "";
             email.Text = "";
