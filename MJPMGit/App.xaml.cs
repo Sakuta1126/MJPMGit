@@ -2,10 +2,26 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MJPMGit.Widoki;
+using MJPMGit.Widoki.Klasy;
+using System.IO;
+
 namespace MJPMGit
 {
     public partial class App : Application
     {
+        private static BazaDanych baza;
+
+        public static BazaDanych Baza
+        {
+            get
+            {
+                if (baza == null)
+                {
+                    baza = new BazaDanych(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "bazaSprawdzian.db3"));
+                }
+                return baza;
+            }
+        }
         public App()
         {
             InitializeComponent();
