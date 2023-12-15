@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using MJPMGit.Widoki;
 namespace MJPMGit
 {
     public partial class App : Application
@@ -10,7 +10,7 @@ namespace MJPMGit
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new StronaGlowna());
         }
 
         protected override void OnStart()

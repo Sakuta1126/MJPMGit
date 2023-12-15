@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace MJPMGit
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace MJPMGit.Widoki
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class StonaGracz : ContentPage
     {
-        public MainPage()
+        public StonaGracz()
         {
             InitializeComponent();
         }
