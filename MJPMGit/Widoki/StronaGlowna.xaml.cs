@@ -31,5 +31,10 @@ namespace MJPMGit.Widoki
         {
             Navigation.PushAsync(new StronaWynik());
         }
+
+        private void zdrapka_nav_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new StronaZdrapka());
+        }
     }
 }
