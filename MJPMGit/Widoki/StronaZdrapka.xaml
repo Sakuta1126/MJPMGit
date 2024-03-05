@@ -1,39 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MJPMGit.Widoki.StronaZdrapka" Title="Zdrapki">
+             x:Class="MJPMGit.Widoki.StronaZdrapka" Title="Zdrapki" BackgroundColor="Black">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Zdrapka" HorizontalOptions="Center" FontSize="30"></Label>
-            <StackLayout x:Name="zdrapki" >
-                <StackLayout Orientation="Horizontal" Margin="30,0,0,0">
-                    <Button x:Name="btn1" ImageSource="gwiazda.png" Clicked="btn1_Clicked" WidthRequest="108" HeightRequest="98"></Button>
-                    <Button x:Name="btn2" ImageSource="gwiazda.png" Clicked="btn2_Clicked" WidthRequest="108" HeightRequest="98"></Button>
-                    <Button x:Name="btn3" ImageSource="gwiazda.png" Clicked="btn3_Clicked" WidthRequest="108" HeightRequest="98"></Button>
-
+            <Label TextColor="#516AF7" FontAttributes="Bold" Text="Zdrapka" HorizontalOptions="Center" FontSize="40" VerticalOptions="CenterAndExpand"></Label>
+            <StackLayout x:Name="zdrapki">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Button CornerRadius="0" HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#516AF7" TextColor="#1A1A1A" FontSize="20" FontAttributes="Bold" x:Name="pole1" ImageSource="gwiazda.png" Clicked="OdkryjPole1" WidthRequest="102" HeightRequest="90"></Button>
+                    <Button CornerRadius="0" HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#516AF7" TextColor="#1A1A1A" FontSize="20" FontAttributes="Bold" x:Name="pole2" ImageSource="gwiazda.png" Clicked="OdkryjPole2" WidthRequest="102" HeightRequest="90"></Button>
+                    <Button CornerRadius="0" HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#516AF7" TextColor="#1A1A1A" FontSize="20" FontAttributes="Bold" x:Name="pole3" ImageSource="gwiazda.png" Clicked="OdkryjPole3" WidthRequest="102" HeightRequest="90"></Button>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" Margin="30,0,0,0">
-                    <Button x:Name="btn5" ImageSource="gwiazda.png" Clicked="btn5_Clicked" WidthRequest="108" HeightRequest="98"></Button>
-                    <Button x:Name="btn6" ImageSource="gwiazda.png" Clicked="btn6_Clicked" WidthRequest="108" HeightRequest="98"></Button>
-                    <Button x:Name="btn7" ImageSource="gwiazda.png" Clicked="btn7_Clicked" WidthRequest="108" HeightRequest="98"></Button>
-
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Button CornerRadius="0" HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#516AF7" TextColor="#1A1A1A" FontSize="20" FontAttributes="Bold" x:Name="pole4" ImageSource="gwiazda.png" Clicked="OdkryjPole4" WidthRequest="102" HeightRequest="90"></Button>
+                    <Button CornerRadius="0" HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#516AF7" TextColor="#1A1A1A" FontSize="20" FontAttributes="Bold" x:Name="pole5" ImageSource="gwiazda.png" Clicked="OdkryjPole5" WidthRequest="102" HeightRequest="90"></Button>
+                    <Button CornerRadius="0" HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#516AF7" TextColor="#1A1A1A" FontSize="20" FontAttributes="Bold" x:Name="pole6" ImageSource="gwiazda.png" Clicked="OdkryjPole6" WidthRequest="102" HeightRequest="90"></Button>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" Margin="30,0,0,0">
-                    <Button x:Name="btn9" ImageSource="gwiazda.png" Clicked="btn9_Clicked" WidthRequest="108" HeightRequest="98"></Button>
-                    <Button x:Name="btn10" ImageSource="gwiazda.png" Clicked="btn10_Clicked" WidthRequest="108" HeightRequest="98"></Button>
-                    <Button x:Name="btn11" ImageSource="gwiazda.png" Clicked="btn11_Clicked" WidthRequest="108" HeightRequest="98"></Button>
-
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Button CornerRadius="0" HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#516AF7" TextColor="#1A1A1A" FontSize="20" FontAttributes="Bold" x:Name="pole7" ImageSource="gwiazda.png" Clicked="OdkryjPole7" WidthRequest="102" HeightRequest="90"></Button>
+                    <Button CornerRadius="0" HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#516AF7" TextColor="#1A1A1A" FontSize="20" FontAttributes="Bold" x:Name="pole8" ImageSource="gwiazda.png" Clicked="OdkryjPole8" WidthRequest="102" HeightRequest="90"></Button>
+                    <Button CornerRadius="0" HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#516AF7" TextColor="#1A1A1A" FontSize="20" FontAttributes="Bold" x:Name="pole9" ImageSource="gwiazda.png" Clicked="OdkryjPole9" WidthRequest="102" HeightRequest="90"></Button>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                <Label Text="Twoje szczesliwe liczby" FontSize="30"></Label>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+                <Label TextColor="#516AF7" FontAttributes="Bold" Text="Twoje szczesliwe liczby" FontSize="25"></Label>
             </StackLayout>
-
-            <StackLayout Orientation="Horizontal" Margin="30,0,0,0">
-                <Button x:Name="btn4" ImageSource="diament.png" Clicked="btn4_Clicked_1" WidthRequest="108" HeightRequest="98"></Button>
-                <Button x:Name="btn8" ImageSource="diament.png" Clicked="btn8_Clicked_1" WidthRequest="108" HeightRequest="98"></Button>
-                <Button x:Name="btn12" ImageSource="diament.png" Clicked="btn12_Clicked_1" WidthRequest="108" HeightRequest="98"></Button>
-
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+                <Button CornerRadius="0" HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#1A1A1A" TextColor="#516AF7" FontSize="20" FontAttributes="Bold" x:Name="wygranaLiczba1" ImageSource="diament.png" Clicked="OdkryjWygranaLiczbe1" WidthRequest="102" HeightRequest="90"></Button>
+                <Button CornerRadius="0" HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#1A1A1A" TextColor="#516AF7" FontSize="20" FontAttributes="Bold" x:Name="wygranaLiczba2" ImageSource="diament.png" Clicked="OdkryjWygranaLiczbe2" WidthRequest="102" HeightRequest="90"></Button>
+                <Button CornerRadius="0" HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#1A1A1A" TextColor="#516AF7" FontSize="20" FontAttributes="Bold" x:Name="wygranaLiczba3" ImageSource="diament.png" Clicked="OdkryjWygranaLiczbe3" WidthRequest="102" HeightRequest="90"></Button>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

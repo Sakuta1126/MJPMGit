@@ -12,168 +12,240 @@ namespace MJPMGit.Widoki
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StronaZdrapka : ContentPage
     {
-        Random random = new Random();
+        Random losowa = new Random();
         int a, b, c, d, x, f, g, h, i, j, k, l;
-            bool btn4Clicked = false;
-            bool btn8Clicked = false;
-            bool btn12Clicked = false;
+        bool odkrytoWygrywajacaLiczbe1 = false;
+        bool odkrytoWygrywajacaLiczbe2 = false;
+        bool odkrytoWygrywajacaLiczbe3 = false;
+        int licznik = 0;
         public StronaZdrapka()
         {
-            a = random.Next(51);
-            b = random.Next(51);
-            c = random.Next(51);
-            d = random.Next(51);
-            x = random.Next(51);
-            f = random.Next(51);
-            g = random.Next(51);
-            h = random.Next(51);
-            i = random.Next(51);
-            j = random.Next(51);
-            k = random.Next(51);
-            l = random.Next(51);
+            a = losowa.Next(51);
+            b = losowa.Next(51);
+            c = losowa.Next(51);
+            d = losowa.Next(51);
+            x = losowa.Next(51);
+            f = losowa.Next(51);
+            g = losowa.Next(51);
+            h = losowa.Next(51);
+            i = losowa.Next(51);
+            j = losowa.Next(51);
+            k = losowa.Next(51);
+            l = losowa.Next(51);
             InitializeComponent();
             zdrapki.IsVisible = false;
         }
     
-        private void CheckVisibility()
+        private void SprawdzWidocznosc()
         {
-            if (btn4Clicked && btn8Clicked && btn12Clicked)
+            if (odkrytoWygrywajacaLiczbe1 && odkrytoWygrywajacaLiczbe2 && odkrytoWygrywajacaLiczbe3)
             {
                 zdrapki.IsVisible = true;
             }
         }
 
-        private async void btn1_Clicked(object sender, EventArgs e)
+        private void BrakWygranych()
         {
-            btn1.Text = d.ToString();
-            btn1.ImageSource = "";
-            if (a == d || b == d || c == d)
-            { 
-            await DisplayAlert("Wygrales", "udalo ci sie wygrac glowna nagrode zdrapkowa", "ok");
-           Navigation.PushAsync(new StronaGlowna());
-            
-            }
-
-        }
-
-        private async void btn2_Clicked(object sender, EventArgs e)
-        {
-            btn2.Text = x.ToString();
-            btn2.ImageSource = "";
-            if (a == x || b == x || c == x)
+            licznik++;
+            if(licznik == 9)
             {
-            await DisplayAlert("Wygrales", "udalo ci sie wygrac glowna nagrode zdrapkowa", "ok");
-          Navigation.PushAsync(new StronaGlowna());
-
+                DisplayAlert("Przegrana", "Nie udało ci się wygrać.", "ok");
+                _ = Navigation.PushAsync(new StronaGlowna());
             }
         }
-
-        private async void btn3_Clicked(object sender, EventArgs e)
+        private async void OdkryjPole1(object sender, EventArgs e)
         {
-            btn3.Text = f.ToString();
-            btn3.ImageSource = "";
-            if (a == f || b == f || c == f)
+            pole1.Text = d.ToString();
+            if (pole1.ImageSource != null)
             {
-                await DisplayAlert("Wygrales", "udalo ci sie wygrac glowna nagrode zdrapkowa", "ok");
-          Navigation.PushAsync(new StronaGlowna());
-
+                if (a == d || b == d || c == d)
+                {
+                    pole1.ImageSource = null;
+                    await DisplayAlert("Wygrana", "Gratulację, wygrałeś główną nagrodę.", "ok");
+                    _ = Navigation.PushAsync(new StronaGlowna());
+                }
+                else
+                {
+                    BrakWygranych();
+                }
             }
+            pole1.ImageSource = null;
         }
 
-        private async void btn5_Clicked(object sender, EventArgs e)
+        private async void OdkryjPole2(object sender, EventArgs e)
         {
-            btn5.Text = g.ToString();
-            btn5.ImageSource = "";
-            if (a == g || b == g || c == g)
+            pole2.Text = x.ToString();
+            if (pole2.ImageSource != null)
             {
-                await DisplayAlert("Wygrales", "udalo ci sie wygrac glowna nagrode zdrapkowa", "ok");
-           Navigation.PushAsync(new StronaGlowna());
-
+                if (a == x || b == x || c == x)
+                {
+                    pole2.ImageSource = null;
+                    await DisplayAlert("Wygrana", "Gratulację, wygrałeś główną nagrodę.", "ok");
+                    _ = Navigation.PushAsync(new StronaGlowna());
+                }
+                else
+                {
+                    BrakWygranych();
+                }
             }
+            pole2.ImageSource = null;
         }
 
-        private async void btn6_Clicked(object sender, EventArgs e)
+        private async void OdkryjPole3(object sender, EventArgs e)
         {
-            btn6.Text = h.ToString();
-            btn6.ImageSource = "";
-            if (a == h || b == h || c == h)
+            pole3.Text = f.ToString();
+            if (pole3.ImageSource != null)
             {
-
-                await DisplayAlert("Wygrales", "udalo ci sie wygrac glowna nagrode zdrapkowa", "ok");
-             Navigation.PushAsync(new StronaGlowna());
+                if (a == f || b == f || c == f)
+                {
+                    pole3.ImageSource = null;
+                    await DisplayAlert("Wygrana", "Gratulację, wygrałeś główną nagrodę.", "ok");
+                    _ = Navigation.PushAsync(new StronaGlowna());
+                }
+                else
+                {
+                    BrakWygranych();
+                }
             }
+            pole3.ImageSource = null;
         }
 
-        private async void btn7_Clicked(object sender, EventArgs e)
+        private async void OdkryjPole4(object sender, EventArgs e)
         {
-            btn7.Text = i.ToString();
-            btn7.ImageSource = "";
-            if (a == i || b == i || c == i)
+            pole4.Text = g.ToString();
+            if (pole4.ImageSource != null)
             {
-
-                await DisplayAlert("Wygrales", "udalo ci sie wygrac glowna nagrode zdrapkowa", "ok");
-          Navigation.PushAsync(new StronaGlowna());
+                if (a == g || b == g || c == g)
+                {
+                    pole4.ImageSource = null;
+                    await DisplayAlert("Wygrana", "Gratulację, wygrałeś główną nagrodę.", "ok");
+                    _ = Navigation.PushAsync(new StronaGlowna());
+                }
+                else
+                {
+                    BrakWygranych();
+                }
             }
+            pole4.ImageSource = null;
         }
 
-        private async void btn9_Clicked(object sender, EventArgs e)
+        private async void OdkryjPole5(object sender, EventArgs e)
         {
-            btn9.Text=j.ToString();
-            btn9.ImageSource = "";
-            if (a == j || b == j || c == j)
+            pole5.Text = h.ToString();
+            if (pole5.ImageSource != null)
             {
-                await DisplayAlert("Wygrales", "udalo ci sie wygrac glowna nagrode zdrapkowa", "ok");
-           Navigation.PushAsync(new StronaGlowna());
-
+                if (a == h || b == h || c == h)
+                {
+                    pole5.ImageSource = null;
+                    await DisplayAlert("Wygrana", "Gratulację, wygrałeś główną nagrodę.", "ok");
+                    _ = Navigation.PushAsync(new StronaGlowna());
+                }
+                else
+                {
+                    BrakWygranych();
+                }
             }
+            pole5.ImageSource = null;
         }
 
-        private async void btn10_Clicked(object sender, EventArgs e)
+        private async void OdkryjPole6(object sender, EventArgs e)
         {
-            btn10.Text=k.ToString();
-            btn10.ImageSource = "";
-            if (a == k || b == k || c == k)
+            pole6.Text = i.ToString();
+            if (pole6.ImageSource != null)
             {
-                await DisplayAlert("Wygrales", "udalo ci sie wygrac glowna nagrode zdrapkowa", "ok");
-            Navigation.PushAsync(new StronaGlowna());
-
+                if (a == i || b == i || c == i)
+                {
+                    pole6.ImageSource = null;
+                    await DisplayAlert("Wygrana", "Gratulację, wygrałeś główną nagrodę.", "ok");
+                    _ = Navigation.PushAsync(new StronaGlowna());
+                }
+                else
+                {
+                    BrakWygranych();
+                }
             }
+            pole6.ImageSource = null;
         }
 
-        private async void btn11_Clicked(object sender, EventArgs e)
+        private async void OdkryjPole7(object sender, EventArgs e)
         {
-            btn11.Text = l.ToString();
-            btn11.ImageSource = "";
-            if (a == l || b == l || c == l)
+            pole7.Text=j.ToString();
+            if (pole7.ImageSource != null)
             {
-                await DisplayAlert("Wygrales", "udalo ci sie wygrac glowna nagrode zdrapkowa", "ok");
-            Navigation.PushAsync(new StronaGlowna());
-
+                if (a == j || b == j || c == j)
+                {
+                    pole7.ImageSource = null;
+                    await DisplayAlert("Wygrana", "Gratulację, wygrałeś główną nagrodę.", "ok");
+                    _ = Navigation.PushAsync(new StronaGlowna());
+                }
+                else
+                {
+                    BrakWygranych();
+                }
             }
+            pole7.ImageSource = null;
+        }
+
+        private async void OdkryjPole8(object sender, EventArgs e)
+        {
+            pole8.Text=k.ToString();
+            if (pole8.ImageSource != null)
+            {
+                if (a == k || b == k || c == k)
+                {
+                    pole8.ImageSource = null;
+                    await DisplayAlert("Wygrana", "Gratulację, wygrałeś główną nagrodę.", "ok");
+                    _ = Navigation.PushAsync(new StronaGlowna());
+                }
+                else
+                {
+                    BrakWygranych();
+                }
+            }
+            pole8.ImageSource = null;
+        }
+
+        private async void OdkryjPole9(object sender, EventArgs e)
+        {
+            pole9.Text = l.ToString();
+            if (pole9.ImageSource != null)
+            {
+                if (a == l || b == l || c == l)
+                {
+                    pole9.ImageSource = null;
+                    await DisplayAlert("Wygrana", "Gratulację, wygrałeś główną nagrodę.", "ok");
+                    _ = Navigation.PushAsync(new StronaGlowna());
+                }
+                else
+                {
+                    BrakWygranych();
+                }
+            }
+            pole9.ImageSource = null;
         }
      
-        private void btn4_Clicked_1(object sender, EventArgs e)
+        private void OdkryjWygranaLiczbe1(object sender, EventArgs e)
         {
-            btn4Clicked = true;
-            CheckVisibility();
-            btn4.Text = a.ToString();
-            btn4.ImageSource = "";
+            odkrytoWygrywajacaLiczbe1 = true;
+            SprawdzWidocznosc();
+            wygranaLiczba1.Text = a.ToString();
+            wygranaLiczba1.ImageSource = "";
         }
 
-        private void btn8_Clicked_1(object sender, EventArgs e)
+        private void OdkryjWygranaLiczbe2(object sender, EventArgs e)
         {
-            btn8Clicked = true;
-            CheckVisibility();
-            btn8.Text = b.ToString();
-            btn8.ImageSource = "";
+            odkrytoWygrywajacaLiczbe2 = true;
+            SprawdzWidocznosc();
+            wygranaLiczba2.Text = b.ToString();
+            wygranaLiczba2.ImageSource = "";
         }
 
-        private void btn12_Clicked_1(object sender, EventArgs e)
+        private void OdkryjWygranaLiczbe3(object sender, EventArgs e)
         {
-            btn12Clicked = true;
-            CheckVisibility();
-            btn12.Text = c.ToString();
-            btn12.ImageSource = "";
+            odkrytoWygrywajacaLiczbe3 = true;
+            SprawdzWidocznosc();
+            wygranaLiczba3.Text = c.ToString();
+            wygranaLiczba3.ImageSource = "";
         }
     }
 }
