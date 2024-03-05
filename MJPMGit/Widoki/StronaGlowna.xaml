@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MJPMGit.Widoki.StronaGlowna" NavigationPage.HasNavigationBar="True" Title="Strona Glowna">
+             x:Class="MJPMGit.Widoki.StronaGlowna" NavigationPage.HasNavigationBar="False" Title="Strona Glowna" BackgroundColor="Black">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="Center" Margin="0,180,0,0">
-            <Button Text="Gracz" x:Name="gracz_nav" Clicked="gracz_nav_Clicked" WidthRequest="300" BackgroundColor="Gray" FontSize="20" TextColor="WhiteSmoke"></Button>
-            <Button Text="Admin" x:Name="admin_Nnav" Clicked="admin_Nnav_Clicked"  WidthRequest="300" BackgroundColor="Gray" FontSize="20" TextColor="WhiteSmoke"></Button>
-            <Button Text="Wyniki" x:Name="wyniki_nav" Clicked="wyniki_nav_Clicked"  WidthRequest="300" BackgroundColor="Gray" FontSize="20" TextColor="WhiteSmoke"></Button>
-            <Button Text="Zdrapki" x:Name="zdrapka_nav" Clicked="zdrapka_nav_Clicked" WidthRequest="300" BackgroundColor="Gray" TextColor="White" FontSize="20"></Button>
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Button FontAttributes="Bold" Text="Gracz" x:Name="gracz_nav" Clicked="gracz_nav_Clicked" WidthRequest="300" BackgroundColor="#516AF7" FontSize="20" TextColor="#1A1A1A"></Button>
+            <Button FontAttributes="Bold" Text="Admin" x:Name="admin_Nnav" Clicked="admin_Nnav_Clicked"  WidthRequest="300" BackgroundColor="#516AF7" FontSize="20" TextColor="#1A1A1A"></Button>
+            <Button FontAttributes="Bold" Text="Wyniki" x:Name="wyniki_nav" Clicked="wyniki_nav_Clicked"  WidthRequest="300" BackgroundColor="#516AF7" FontSize="20" TextColor="#1A1A1A"></Button>
+            <Button FontAttributes="Bold" Text="Zdrapki" x:Name="zdrapka_nav" Clicked="zdrapka_nav_Clicked" WidthRequest="300" BackgroundColor="#516AF7" TextColor="#1A1A1A" FontSize="20"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
